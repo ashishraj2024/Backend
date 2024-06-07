@@ -6,6 +6,14 @@ const cors = require('cors')
 app.use(cors());
 app.use(express.json()); 
 
+app.use(cors(
+  {
+    origin: {"https://book-bazaar-ashishraj2024s-projects.vercel.app/"},
+      methods: {"POST", "GET"},
+    credentials: true
+  }
+));
+
 app.get('/', (req, res) => {
   res.send('ji Bhai kya hoga aur boliye !')
 })
